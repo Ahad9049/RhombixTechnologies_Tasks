@@ -1,4 +1,3 @@
-# RhombixTechnologies_Tasks
 # 🐧 Linux Fundamentals for DevOps
 **Rhombix Technologies Internship Task**
 > Intern: Ubuntu AWS EC2 | Domain: DevOps
