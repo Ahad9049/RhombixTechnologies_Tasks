@@ -1,0 +1,16 @@
+{
+  "name": "rhombix-jenkins-ci-demo",
+  "version": "1.0.0",
+  "description": "Simple Node.js app used to demo a Jenkins CI pipeline for Rhombix Technologies internship Task 2",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
