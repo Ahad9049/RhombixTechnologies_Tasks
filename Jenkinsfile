@@ -1,33 +1,35 @@
-
 pipeline {
     agent any
- 
+
     options {
         timestamps()
         disableConcurrentBuilds()
     }
- 
-stage('Checkout') {
-    steps {
-        git branch: 'main',
-            credentialsId: 'github-creds',
-            url: 'https://github.com/Ahad9049/RhombixTechnologies_Tasks.git'
-    }
-}
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    credentialsId: 'github-creds',
+                    url: 'https://github.com/Ahad9049/RhombixTechnologies_Tasks.git'
+            }
+        }
+
         stage('Install Dependencies') {
             steps {
                 echo 'Installing npm dependencies...'
                 sh 'npm install'
             }
         }
- 
+
         stage('Run Tests') {
             steps {
                 echo 'Running test suite...'
                 sh 'npm test'
             }
         }
- 
+
         stage('Build') {
             steps {
                 echo 'Build stage - app has no compile step, just confirming it boots...'
@@ -35,7 +37,7 @@ stage('Checkout') {
             }
         }
     }
- 
+
     post {
         success {
             echo 'Pipeline completed successfully — build and tests passed.'
@@ -48,4 +50,3 @@ stage('Checkout') {
         }
     }
 }
- 
