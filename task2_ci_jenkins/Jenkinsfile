@@ -7,14 +7,13 @@ pipeline {
         disableConcurrentBuilds()
     }
  
-    stages {
-        stage('Checkout') {
-            steps {
-                echo 'Pulling latest code from GitHub...'
-                checkout scm
-            }
-        }
- 
+stage('Checkout') {
+    steps {
+        git branch: 'main',
+            credentialsId: 'github-creds',
+            url: 'https://github.com/Ahad9049/RhombixTechnologies_Tasks.git'
+    }
+}
         stage('Install Dependencies') {
             steps {
                 echo 'Installing npm dependencies...'
